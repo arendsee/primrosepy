@@ -3,6 +3,7 @@ import click
 import os
 import signal
 import sys
+from typing import TextIO
 
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
 
@@ -14,7 +15,7 @@ CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
     type=click.File("r"),
     default=sys.stdin,
 )
-def sort_cmd(input_file):
+def sort_cmd(input_file : TextIO) -> None:
     """
     Sort a list in the worst way ever.
 
@@ -30,7 +31,7 @@ def sort_cmd(input_file):
 
 
 @click.group("alg", context_settings=CONTEXT_SETTINGS)
-def primrose_alg():
+def primrose_alg() -> None:
     """
     Algorithm examples.
 
@@ -44,14 +45,14 @@ primrose_alg.add_command(sort_cmd)
 
 @click.group(help="The Primrose Path for Python", context_settings=CONTEXT_SETTINGS)
 @click.version_option(__version__, "-v", "--version", message=__version__)
-def cli():
+def cli() -> None:
     pass
 
 
 cli.add_command(primrose_alg)
 
 
-def main():
+def main() -> None:
     cli()
 
 

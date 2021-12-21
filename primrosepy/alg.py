@@ -1,7 +1,7 @@
 import random
+from typing import Any
 
-
-def worstsort(xs):
+def worstsort(xs: list[Any]) -> list[Any]:
     """
     Sort a list by randomly reording it and seeing if it is sorted
 
@@ -29,9 +29,9 @@ def worstsort(xs):
     return xs
 
 
-def is_ordered(xs):
+def is_ordered(xs: list[Any]) -> bool:
     if len(xs) < 2:
-        return xs
+        return True
     else:
         for i in range(len(xs) - 1):
             if xs[i] > xs[i + 1]:
