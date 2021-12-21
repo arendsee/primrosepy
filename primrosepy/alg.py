@@ -12,14 +12,15 @@ def worstsort(xs):
     Worst case, um, never?
 
     Parameters
-    ==========
+    ----------
 
-    xs : list of anything
+    xs : list
+      the unordered list to sort
 
     Return
-    ======
-
-    An ordered list or the heatdeath of the universe (whichever comes first)
+    ------
+    list
+      an ordered list or the heatdeath of the universe (whichever comes first)
     """
 
     while not is_ordered(xs):
